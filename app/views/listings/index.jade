@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block content
+  h1 This is a listing
+  each listing in listings
+      .listing
+        span=listing.name
+        br
+        span=listing.payment
+        br
+        span=listing.createdAt
+        

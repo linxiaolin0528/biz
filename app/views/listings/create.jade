@@ -1,0 +1,45 @@
+extends ./index
+
+block content
+	h1 Create Listing Object
+	div.listing
+	form(name='saveListing', action='/listings/save', method='post')
+		table
+			tr
+				td Name:
+				td
+					input(type='text', name='name')
+			tr
+				td Address1:
+				td
+					input(type='address', name='address1')
+			tr
+				td Address2:
+				td
+					input(type='address', name='address2')
+			tr
+				td City:
+				td
+					input(type='city', name='city')
+			tr
+				td State:
+				td
+					input(type='address', name='state')
+			tr
+				td Country:
+				td
+					input(type='address', name='country')
+			tr
+				td Zip Code:
+				td
+					input(type='address', name='zipCode')
+			tr
+				td Web URL:
+				td
+					input(type='text', name='webUrl')
+			tr
+				td Phone:
+				td 
+					input(type='text', name='phone')
+
+		input(type='submit', name='submit')
