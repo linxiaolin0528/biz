@@ -1,25 +1,22 @@
 {
-    "name": "boilerplate"
-  , "description": "Fleshed out boilerplate nodejs / mongoose"
+    "name": "business listing api prototype"
   , "version": "1.0.0"
-  , "private": false
-  , "author": "Alexis Loizou, alex@roboboogie.us, Github: alexloi"
+  , "private": true
   , "engines": {
         "node": "0.6.18"
       , "npm": "1.1.9"
     }
   , "scripts": {
-      "start": "./node_modules/.bin/nodemon server.js"
+      "start": "node app.js"
     }
   , "dependencies": {
-      "express": "latest"
-    , "jade": "latest"
-    , "mongoose": "latest"
-    , "connect-mongo": "latest"
-    , "connect-flash": "latest"
-    , "underscore": "latest"
-    , "gzippo": "latest"
-    , "async": "latest"
-    , "nodemon": "latest"
+      "express": "3.2.6"
+    , "jade": "0.35.0"
+    , "mongoose": "3.8.1"
+    , "connect-mongo": "0.4.0"
+    , "connect-flash": "0.1.1"
+    , "async": "0.2.9"
+    , "underscore": "1.5.2"
+    , "nodemon": "0.7.10"
   }
 }
