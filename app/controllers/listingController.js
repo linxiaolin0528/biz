@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
 
 // save listing 
 exports.save = function(req, res){
-	var item = new Listing();
+	var listing = new Listing();
 	var address = new Address();
 
 	address.address1 = req.body.address1;
@@ -17,43 +17,37 @@ exports.save = function(req, res){
 	address.country = req.body.country;
 	address.zipCode = req.body.zipCode;
 
-	item.name = req.body.name;
-	item.webUrl = req.body.webUrl;
-	item.phone = req.body.phone;
+	listing.name = req.body.name;
+	listing.webUrl = req.body.webUrl;
+	listing.phone = req.body.phone;
+	listing.hours = req.body.hours;
+	listing.payment =req.body.payment;
+	listing.latitude = req.body.latitude;
+	listing.longitude = req.body.longitude;
+	listing.description = req.body.description;
+	
 
 	address.save(function(err){
 		if(err){
-			res.render('listings/create',{
-				res.render('listings/create',{
-						item: item,
-						errors: err.errors
-					});
-			});
+			res.redirect('listingView/create');
+			console.log(err.errors);
 		}else{
 			item.save(function(err){
 				if(err){
-					res.render('listings/create',{
-						item: item,
-						errors: err.errors
-					});
+					console.log(err.errors);
+					res.render('listingView/create');
 				}else{
 					var output = JSON.stringify(item);
-					res.redirect('/listings/get/' + item._id);
+					res.redirect('/listing/get/' + item._id);
 				}
 			});
 		}
 	});
 
-	
-	
-	
 }
 
 exports.create = function(req, res){
-	var test = 'xxxxx';
-	res.render('listings/create',{
-		test: test
-	});
+	res.render('listingView/create');
 }
 
 exports.get = function(req, res){
@@ -62,7 +56,7 @@ exports.get = function(req, res){
 		.exec(function(err, listings){
 			if(err) return res.render('500')
 			Listing.count().exec(function(err, count){
-				res.render('listings/get', {
+				res.render('listingView/get', {
 					title:'Get Listing Object API',
 					listingID: listingID,
 					listings: listings
@@ -78,7 +72,7 @@ exports.index = function(req,res){
 		.exec(function(err, listings){
 			if(err) return res.render('500')
 			Listing.count().exec(function(err,count){
-				res.render('listings/index', {
+				res.render('listingView/index', {
 					title: 'List of listings',
 					listings: listings
 				});
@@ -88,7 +82,7 @@ exports.index = function(req,res){
 
 // edit listing
 exports.edit = function(req, res){
-	res.render('listings/edit', {
+	res.render('listingView/edit', {
 		title: 'Edit '+req.listing.title,
 	    listing: req.listing
 	});
@@ -101,7 +95,7 @@ exports.update = function(req, res){
 	listing = _extend(listing, req.body);
 	listing.save(function(err,doc){
 		if(err){
-			res.render('listings/edit', {
+			res.render('listingView/edit', {
 				title: 'Edit listing',
 				listing: listing,
 				errors: err.erros	
@@ -116,6 +110,6 @@ exports.update = function(req, res){
 exports.destroy = function(req, res){
 	var listing = req.listing;
 	listing.remove(function(err){
-		res.redirect('/listings');
+		res.redirect('/listing');
 	});
 }
