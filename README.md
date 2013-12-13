@@ -38,3 +38,9 @@ Category has following fields:
     name
     parentID - id of the parent category
 
+TODO
+    validation for Category, Listing
+    structure cleanning
+    UI
+
+
