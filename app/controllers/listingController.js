@@ -1,9 +1,6 @@
 var mongoose = require('mongoose'),
 	Listing = mongoose.model('Listing'),
-	Address = mongoose.model('Address'),
-	_ = require('underscore'),
-	url = require('url'),
-	http = require('http');
+	Address = mongoose.model('Address');
 
 // save listing 
 exports.save = function(req, res){
@@ -32,13 +29,13 @@ exports.save = function(req, res){
 			res.redirect('listingView/create');
 			console.log(err.errors);
 		}else{
-			item.save(function(err){
+			listing.save(function(err){
 				if(err){
 					console.log(err.errors);
 					res.render('listingView/create');
 				}else{
-					var output = JSON.stringify(item);
-					res.redirect('/listing/get/' + item._id);
+					var output = JSON.stringify(listing);
+					res.redirect('/listing/get/' + listing._id);
 				}
 			});
 		}
