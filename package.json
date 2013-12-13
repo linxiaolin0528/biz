@@ -1,23 +1,19 @@
 {
-    "name": ""
-  , "version": "1.0.0"
-  , "private": true
-  , "engines": {
-        "node": "0.6.18"
-      , "npm": "1.1.9"
+    "name": "",
+    "version": "1.0.0",
+    "private": true,
+    "engines": {
+        "node": "0.6.18",
+        "npm": "1.1.9"
+    }, 
+    "scripts": {
+        "start": "node app.js"
+    }, 
+    "dependencies": {
+        "express": "3.2.6",
+        "jade": "0.35.0",
+        "mongoose": "3.8.1",
+        "nodemon": "0.7.10",
+        "mongoose-auto-increment": "2.1.1"
     }
-  , "scripts": {
-      "start": "node app.js"
-    }
-  , "dependencies": {
-      "express": "3.2.6"
-    , "jade": "0.35.0"
-    , "mongoose": "3.8.1"
-    , "connect-mongo": "0.4.0"
-    , "connect-flash": "0.1.1"
-    , "async": "0.2.9"
-    , "underscore": "1.5.2"
-    , "nodemon": "0.7.10"
-    , "mongoose-auto-increment": "2.1.1"
-  }
 }

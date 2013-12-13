@@ -1,0 +1,15 @@
+extends ../index
+
+block content
+	div.category
+		form(name='saveCategory', action='/category/save', method='post')
+			div
+				label.category Parent
+				input(type='text', 'parent')
+			div
+				label.category Name:
+				input(type='text', name='name')
+			div
+				label.category Description:
+				textarea(name='description', rows='4', cols='50')
+			input(type='submit', name='submit')

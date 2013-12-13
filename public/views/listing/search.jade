@@ -1,0 +1,19 @@
+extends ../index
+
+block content
+	h1 Search Listing
+	div.search
+		form(name='searchListing', action='/listing/performSearch', method='get')
+			div
+				label.search Name
+				input(type='text', name='name')
+			div
+				label.category State:
+				input(type='text', name='state')
+			div
+				label.category City:
+				input(type='text', name='city')
+			div
+				label.category Zip Code:
+				input(type='text', name='zipCode')
+			input(type='submit', name='submit')

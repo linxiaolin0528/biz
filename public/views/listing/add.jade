@@ -1,0 +1,60 @@
+extends ../index
+
+block content
+	h1 New Listing Object
+	div.listing
+	form(name='saveListing', action='/listing/save', method='post')
+		div
+			label.list Category:
+			input(type='text', name='category')
+		div
+			label.list Name:
+			input(type='text', name='name')
+		div
+			label.list Address1:
+			input(type='text', name='address1')
+		div
+			label.list Address2:
+			input(type='text', name='address2')
+		div
+			label.list City:
+			input(type='text', name='city')
+		div
+			label.list State:
+			input(type='text', name='state')
+		div
+			label.list Country:
+			input(type='text', name='country')
+		div
+			label.list Zip Code:
+			input(type='text', name='zipCode')
+		div
+			label.list Web URL:
+			input(type='text', name='webUrl')
+		div
+			label.list Phone:
+			input(type='text', name='phone')
+		div
+			label.list Mobile:
+			input(type='text', name='mobile')
+		div
+			label.list Fax:
+			input(type='text', name='fax')
+		div
+			label.list Hours:
+			input(type='text', name='hours')
+		div
+			label.list Payment Types:
+			select
+				option Credit Card
+				option Cash
+		div
+			label.list Latitude:
+			input(type='text', name='latitude')
+		div
+			label.list Longitude:
+			input(type='text', name='longitude')
+		div
+			label.list Description:
+			textarea(name='description', rows='4', cols='50')
+		input(type='submit', name='submit')
