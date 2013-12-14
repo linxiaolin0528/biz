@@ -4,9 +4,19 @@ block content
 	h1 New Listing Object
 	div.listing
 	form(name='saveListing', action='/listing/save', method='post')
-		div
-			label.list Category:
-			input(type='text', name='category')
+		div.categories Category:
+			input(type='checkbox', name='category')
+			| Medical
+			input(type='checkbox', name='category')
+			| Insurance
+			input(type='checkbox', name='category')
+			| e-Commerce
+			input(type='checkbox', name='category')
+			| Internet
+			input(type='checkbox', name='category')
+			| Design
+			input(type='checkbox', name='category')
+			| Art
 		div
 			label.list Name:
 			input(type='text', name='name')
@@ -43,11 +53,13 @@ block content
 		div
 			label.list Hours:
 			input(type='text', name='hours')
-		div
-			label.list Payment Types:
-			select
-				option Credit Card
-				option Cash
+		
+		div.payment Payment:
+			input(type='checkbox', name='payment')
+			| Credit Card 
+			input(type='checkbox', name='payment')
+			| Cash
+			
 		div
 			label.list Latitude:
 			input(type='text', name='latitude')

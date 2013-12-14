@@ -3,9 +3,13 @@ extends ../index
 block content
 	div.category
 		form(name='saveCategory', action='/category/save', method='post')
-			div
-				label.category Parent
-				input(type='text', 'parent')
+			div.categories
+				input(type='checkbox', name='A')
+				input(type='checkbox', name='B')
+				input(type='checkbox', name='C')
+				input(type='checkbox', name='D')
+				input(type='checkbox', name='E')
+				input(type='checkbox', name='F')
 			div
 				label.category Name:
 				input(type='text', name='name')
